@@ -39,6 +39,8 @@ android {
 
 dependencies {
 
+    implementation(project.dependencies.platform(libs.firebaseBom))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
