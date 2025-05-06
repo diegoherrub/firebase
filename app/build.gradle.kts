@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
 
     alias(libs.plugins.google.services)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -35,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,6 +47,10 @@ dependencies {
     implementation(project.dependencies.platform(libs.firebaseBom))
     implementation(libs.firebaseFirestore)
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(project.dependencies.platform(libs.koin.bom))
+    ksp(libs.koin.ksp)
+    implementation(libs.koin.android)
+    implementation(libs.koin.annotations)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -51,4 +60,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+ksp {
+    arg("KOIN_CONFIG_CHECK", "true")
 }
