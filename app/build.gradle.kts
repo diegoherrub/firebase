@@ -41,6 +41,7 @@ dependencies {
 
     implementation(project.dependencies.platform(libs.firebaseBom))
     implementation(libs.firebaseFirestore)
+    implementation(libs.androidx.navigation.fragment.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
