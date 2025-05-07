@@ -16,6 +16,7 @@ navigationFragmentKtx = "2.8.9"
 koinBom = "4.0.0"
 koinAnnotations = "1.4.0"
 kspVersion = "2.0.21-1.0.26"
+roomVersion = "2.7.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +35,9 @@ koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koinAnnotations" }
 koin-ksp = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koinAnnotations" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinBom" }
+room-ksp = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
+room-runtime = { group = "android.room", name = "room-runtime", version.ref = "roomVersion" }
+room-coroutines = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
