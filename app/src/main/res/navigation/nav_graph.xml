@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/albumsList">
+
+    <fragment
+        android:id="@+id/albumsList"
+        android:name="pol.rubiano.firebase.features.albums.presentation.fragments.AlbumsList">
+
+        <action
+            android:id="@+id/fromAlbumsListToMushroomsList"
+            app:destination="@+id/mushroomsList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mushroomsList"
+        android:name="pol.rubiano.firebase.features.albums.presentation.fragments.MushroomsList">
+
+        <argument
+            android:name="albumName"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
